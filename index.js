@@ -389,6 +389,7 @@ const main = (req, res) => {
                 body += 'Available and acquired victory points: <br>'
                 rows.push((['']).concat(JEWELS_ROW.slice(0,5)).concat(['Owned by', 'VP']))
                 // TODO(bowei): filter owned nobles to the bottom
+                // TODO(bolun): suggest using this to only display nobels
                 rows = rows.concat(game_state.nobles.map((r,i) => ['Noble ' + (i+1).toString()].concat(r).concat([3])))
                 let to_concat = CARD_KEYS.map(k => [k].concat(game_state.market[k]))
                 to_concat = to_concat.concat(game_state.reserves[current_player].map((r, i) => ['X' + (i+1).toString()].concat(r)))
